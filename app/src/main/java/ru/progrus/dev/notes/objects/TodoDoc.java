@@ -3,10 +3,10 @@ package ru.progrus.dev.notes.objects;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by Evgeniy on 06.06.2015.
- */
+
 public class TodoDoc implements Serializable {
+
+    private static final long serialVersionUID = -7367289796391092618L;
 
     private String name;
     private String content;

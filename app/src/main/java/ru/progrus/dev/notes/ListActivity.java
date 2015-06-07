@@ -1,12 +1,15 @@
 package ru.progrus.dev.notes;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +49,7 @@ public class ListActivity extends Activity {
         docList.add(d2);
         docList.add(d3);
 
-        ArrayAdapter<TodoDoc> arrayAdapter = new ArrayAdapter<TodoDoc>(this,R.layout.listview_row,docList);
+        ArrayAdapter<TodoDoc> arrayAdapter = new ArrayAdapter<>(this,R.layout.listview_row,docList);
         listTasks.setAdapter(arrayAdapter);
 
 
@@ -65,13 +68,52 @@ public class ListActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()){
+            case R.id.add_task:{
+                TodoDoc todoDoc = new TodoDoc();
+                todoDoc.setName(getResources().getString(R.string.create));
+                showDoc(todoDoc);
+                return true;
+            }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            default:
+                break;
         }
 
+
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDoc(TodoDoc todoDoc) {
+
+        Intent intentDetails = new Intent(this,DetailsActivity.class);
+        intentDetails.putExtra(TODO_DOCUMENT, todoDoc);
+        startActivityForResult(intentDetails, TODO_DETAILS_REQUEST);
+
+
+
+
+
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == TODO_DETAILS_REQUEST) {
+
+            switch (resultCode){
+                case RESULT_CANCELED:
+                    Toast.makeText(this,"Canceled",Toast.LENGTH_SHORT).show();
+                    break;
+                case DetailsActivity.RESULT_SAVE:
+                    Toast.makeText(this,"Saved",Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
 }

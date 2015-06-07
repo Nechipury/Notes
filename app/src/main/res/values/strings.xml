@@ -6,6 +6,7 @@
     <string name="title_activity_details">DetailsActivity</string>
     <string name="back">Back</string>
     <string name="save">Save</string>
-    <string name="create">Create</string>
+    <string name="create">New_doc</string>
     <string name="add_task">+</string>
+    <string name="title_activity_todo_list">Notes</string>
 </resources>
