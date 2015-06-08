@@ -12,6 +12,8 @@ public class TodoDoc implements Serializable {
     private String content;
     private Date createDate;
 
+    private int number = -1;
+
 
     public TodoDoc() {
 
@@ -50,8 +52,23 @@ public class TodoDoc implements Serializable {
         this.createDate = createDate;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof TodoDoc)) return false;
+        TodoDoc todoDoc = (TodoDoc) o;
+        return number == todoDoc.getNumber();
     }
 }

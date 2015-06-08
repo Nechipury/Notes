@@ -1,8 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-        android:id="@+id/add_task"
+        android:id="@+id/new_task"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="@string/add_task"
-            />
+        android:icon="@drawable/ic_action_new"    />
 </menu>
