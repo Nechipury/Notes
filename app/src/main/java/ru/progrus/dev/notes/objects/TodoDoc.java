@@ -11,6 +11,17 @@ public class TodoDoc implements Serializable {
     private String name;
     private String content;
     private Date createDate;
+    private PriorityType priorityType = PriorityType.LOW;
+
+    public Boolean getIsCheked() {
+        return isCheked;
+    }
+
+    public void setChecked(Boolean isCheked) {
+        this.isCheked = isCheked;
+    }
+
+    private Boolean isCheked;
 
     private int number = -1;
 
@@ -18,6 +29,14 @@ public class TodoDoc implements Serializable {
     public TodoDoc() {
 
 
+    }
+
+    public PriorityType getPriorityType() {
+        return priorityType;
+    }
+
+    public void setPriorityType(PriorityType priorityType) {
+        this.priorityType = priorityType;
     }
 
     public TodoDoc(String name, String content, Date createDate) {
@@ -65,10 +84,10 @@ public class TodoDoc implements Serializable {
         return name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof TodoDoc)) return false;
-        TodoDoc todoDoc = (TodoDoc) o;
-        return number == todoDoc.getNumber();
-    }
+
+
+//    @Override
+//    public int compareTo(TodoDoc another) {
+//        return another.getCreateDate().compareTo(createDate);
+//    }
 }

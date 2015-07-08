@@ -6,10 +6,19 @@
     <string name="title_activity_details">DetailsActivity</string>
     <string name="back">Back</string>
     <string name="save">Save</string>
-    <string name="new_doc">New_doc</string>
+    <string name="new_doc">New document</string>
     <string name="add_task">+</string>
     <string name="title_activity_todo_list">Notes</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="confirm_delete">Do you want delete?</string>
+    <string name="empty_list">(No notes)</string>
+    <string name="search_title">Search </string>
+    <string name="sort">Sort</string>
+    <string name="sort_date">Date</string>
+    <string name="sort_name">Name</string>
+    <string name="priority">Priority</string>
+    <string name="low">Low</string>
+    <string name="middle">Middle</string>
+    <string name="high">High</string>
 </resources>

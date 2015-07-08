@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-          android:layout_height="40dp"
-          android:gravity="center_vertical"
-          android:textColor="@android:color/black"
-          android:textSize="20sp"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-</TextView>
+                android:orientation="horizontal"
+                android:background="@drawable/listview_row_selector">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_image"
+        android:layout_alignParentLeft="true"
+        android:padding="3dp"
+        android:layout_marginRight="5dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/image_priority"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_launcher"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_doc"
+        android:id="@+id/todo_name"
+        android:layout_gravity="center_vertical"
+        android:paddingBottom="2dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:layout_toRightOf="@+id/layout_image"
+        android:layout_marginLeft="10dp"
+        android:textColor="#040404"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="todo_date"
+        android:id="@+id/todo_date"
+        android:layout_alignLeft="@+id/todo_name"
+        android:layout_below="@+id/todo_name"
+        android:textColor="#ff343434"
+        android:textSize="15sp"
+        android:paddingTop="2dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/image_arrow"-->
+        <!--android:src="@drawable/right_arrow"-->
+        <!--android:background="#00000000"-->
+        <!--android:contentDescription="@string/app_name"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="10dp"-->
+
+        <!--android:layout_centerVertical="true"/>-->
+
+</RelativeLayout>
+
+
