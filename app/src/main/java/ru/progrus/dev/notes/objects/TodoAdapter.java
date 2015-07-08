@@ -75,6 +75,7 @@ private View.OnClickListener checkListener;
 
         todoDoc.setChecked(false);
 
+        //передаем чеку ссылку на его документ которому он принадлежит
         holder.checkBox.setTag(todoDoc);
 
         return convertView;
